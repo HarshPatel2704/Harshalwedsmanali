@@ -583,18 +583,6 @@ export default function WeddingInvitation() {
             <LeafOrnament className="leaf bl" /><LeafOrnament className="leaf br" />
 
             <div className="person">
-              <p className="lbl-deva">वधू परिचय</p>
-              <h2 className="name">{bride.name}</h2>
-              <p className="role">The Bride</p>
-              <p className="par">D/o. {bride.mother}</p>
-              <p className="par-amp">&</p>
-              <p className="par">{bride.father}</p>
-              <p className="city">[{bride.place.replace(/[[\]]/g, "")}]</p>
-            </div>
-
-            <div className="card-amp" aria-hidden="true"><i /><span>&</span><i /></div>
-
-            <div className="person">
               <p className="lbl-deva">वर परिचय</p>
               <h2 className="name">{groom.name}</h2>
               <p className="role">The Groom</p>
@@ -602,6 +590,18 @@ export default function WeddingInvitation() {
               <p className="par-amp">&</p>
               <p className="par">{groom.father}</p>
               <p className="city">[{groom.place.replace(/[[\]]/g, "")}]</p>
+            </div>
+
+            <div className="card-amp" aria-hidden="true"><i /><span>&</span><i /></div>
+
+            <div className="person">
+              <p className="lbl-deva">वधू परिचय</p>
+              <h2 className="name">{bride.name}</h2>
+              <p className="role">The Bride</p>
+              <p className="par">D/o. {bride.mother}</p>
+              <p className="par-amp">&</p>
+              <p className="par">{bride.father}</p>
+              <p className="city">[{bride.place.replace(/[[\]]/g, "")}]</p>
             </div>
 
             <Divider mark="star" />
