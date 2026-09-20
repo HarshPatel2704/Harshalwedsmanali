@@ -5,7 +5,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 /* ==================================================================== */
 const CONFIG = {
   bride: { name: "Manali", mother: "Smt. Chandrikaben Parsotambhai Dayani", father: "Sh. Parsotambhai Gagadasbhai Dayani", place: "Dhavada Mota" },
-  groom: { name: "Harshal", mother: "Smt. Kavitaben Dilipbhai Bhimani", father: "Sh. Dilipbhai Vithalbhai Bhimani", place: "Devpar - Yaksh" },
+  groom: { name: "Harshal", mother: "Smt. Kavitaben Dilipbhai Bhimani", father: "Sh. Dilipbhai Vitthalbhai Bhimani", place: "Devpar - Yaksh" },
 
   weddingDate: "2026-12-03T07:30:00+05:30",
   calendarUrl:
@@ -37,14 +37,14 @@ const CONFIG = {
 
   events: [
     {
-      name: "Ganesh Sthapana", icon: "🪔", image: "/GaneshSthapana.png",
+      name: "Ganesh Sthapna", icon: "🪔", image: "/GaneshSthapana.png",
       day: "Wednesday", date: "December 2, 2026",
       blurb: "Bidding welcome to Lord Ganesha, as the celebrations begin.",
       whenLabel: "As The Blessings Begin", time: "7:30 AM",
       whereLabel: "At The Chosen Venue", place: "Home (Shree Ram Krupa)",
     },
     {
-      name: "Mandva Rupan", icon: "🌸", image: "/MandvaRopan.png",
+      name: "Mandwa Ropan", icon: "🌸", image: "/MandvaRopan.png",
       day: "Wednesday", date: "December 2, 2026",
       blurb: "Adorning the sacred mandap for the ceremonies ahead.",
       whenLabel: "As The Mandap Comes Alive", time: "8:00 AM",
