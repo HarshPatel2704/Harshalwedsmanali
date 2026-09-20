@@ -41,42 +41,37 @@ const CONFIG = {
       day: "Wednesday", date: "December 2, 2026",
       blurb: "Bidding welcome to Lord Ganesha, as the celebrations begin.",
       whenLabel: "As The Blessings Begin", time: "7:30 AM",
-      whereLabel: "At The Chosen Venue", place: "Shri Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      whereLabel: "At The Chosen Venue", place: "Home (Shree Ram Krupa)",
     },
     {
       name: "Mandva Rupan", icon: "🌸", image: "/MandvaRopan.png",
       day: "Wednesday", date: "December 2, 2026",
       blurb: "Adorning the sacred mandap for the ceremonies ahead.",
       whenLabel: "As The Mandap Comes Alive", time: "8:00 AM",
-      whereLabel: "At The Chosen Venue", place: "Shri Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      whereLabel: "At The Chosen Venue", place: "Home (Shree Ram Krupa)",
     },
     {
       name: "Rudu Mameru", icon: "🧡", image: "/RuduMameru.png",
       day: "Wednesday", date: "December 2, 2026",
       blurb: "A cherished tradition of warmth and good wishes from the families.",
       whenLabel: "As Love Pours In", time: "2:30 PM",
-      whereLabel: "At The Chosen Venue", place: "Shri Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
     },
     {
       name: "Bhojan Samarambh", icon: "🍽️", image: "/BhojanSamaram.png",
       day: "Wednesday", date: "December 2, 2026",
       blurb: "A joyous feast to share love, laughter & delicious food.",
       whenLabel: "As Tables Are Set", time: "7:30 PM",
-      whereLabel: "At The Chosen Venue", place: "Shri Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
     },
     {
       name: "Hast Melap", icon: "💍", image: "/HastMelap.png",
       day: "Thursday", date: "December 3, 2026",
       blurb: "The sacred union of two hearts, two souls, two families.",
       whenLabel: "As The Vows Are Sealed", time: "8:30 AM",
-      whereLabel: "At The Chosen Venue", place: "Shri Laxmi Narayan Sanatan Samaj, Dhavada Mota",
+      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Dhavada Mota",
     },
   ],
-
-  venue: {
-    mapEmbed: "https://www.google.com/maps?q=Shri+Laxmi+Narayan+Sanatan+Samaj+Dhavada+Mota&output=embed",
-    directions: "https://maps.google.com/?q=Shri+Laxmi+Narayan+Sanatan+Samaj+Dhavada+Mota",
-  },
 
   footer: {
     // Studio credit block — replace with your own details
@@ -472,7 +467,7 @@ function ScratchHeart({ reveal, onDone }) {
 /*  Main component                                                       */
 /* ==================================================================== */
 export default function WeddingInvitation() {
-  const { bride, groom, story, gallery, events, venue, footer } = CONFIG;
+  const { bride, groom, story, gallery, events, footer } = CONFIG;
   const assets = { ...EMBEDDED_IMAGES, ...CONFIG.assets };
   const [phase, setPhase] = useState("closed");
   const [videoOk, setVideoOk] = useState(true);
@@ -717,36 +712,7 @@ export default function WeddingInvitation() {
           </div>
         </section>
 
-        {/* ---------- Venue ---------- */}
-        <section className="venue">
-  <div className="sec-title">
-    <p className="kicker">Find Your Way To Us</p>
-    <h2>The Venue</h2>
-    <Divider mark="bar" />
-  </div>
-
-  <Reveal>
-    <div className="map">
-      <iframe
-        title="Wedding venue map"
-        src={venue.mapEmbed}
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        allowFullScreen
-      />
-    </div>
-
-    <a
-  className="btn"
-  href="https://www.google.com/maps/search/?api=1&query=23.3178125,69.3206094"
-  target="_blank"
-  rel="noreferrer"
->
-  Get Directions
-</a>
-  </Reveal>
-</section>
-      </main>
+        </main>
 
       {/* ---------- Footer ---------- */}
       <footer className="foot">
@@ -1016,11 +982,6 @@ const CSS = `
 .inv .ev-val { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.6rem; line-height: 1.3; text-shadow: var(--glow); }
 .inv .ev hr { width: 48px; height: 1px; border: 0; background: #e2a3ab; margin: 14px 0 14px; }
 .inv .ev-place { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.15rem; text-shadow: var(--glow); }
-
-/* ---- venue ---- */
-.inv .venue { max-width: 900px; margin: 0 auto; padding: 120px 1.5rem 110px; text-align: center; }
-.inv .map { padding: 8px; border: 1px solid var(--gold-soft); background: #f8ecd0; }
-.inv .map iframe { display: block; width: 100%; height: min(58vh, 420px); border: 0; filter: sepia(.25) saturate(.9); }
 
 /* ---- footer ---- */
 .inv .foot {
