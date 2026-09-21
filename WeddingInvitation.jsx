@@ -4,12 +4,12 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 /*  CONTENT — edit everything here                                       */
 /* ==================================================================== */
 const CONFIG = {
-  bride: { name: "Manali", mother: "Smt. Chandrikaben Parsotambhai Dayani", father: "Sh. Parsotambhai Gagadasbhai Dayani", place: "Dhavada Mota" },
-  groom: { name: "Harshal", mother: "Smt. Kavitaben Dilipbhai Bhimani", father: "Sh. Dilipbhai Vitthalbhai Bhimani", place: "Devpar - Yaksh" },
+  bride: { name: "મનાલી", mother: "શ્રીમતી ચંદ્રિકાબેન પરશોતમભાઈ ડાયાણી", father: "શ્રી પરશોતમભાઈ ગંગાદાસભાઈ ડાયાણી", place: "ધાવડા મોટા" },
+  groom: { name: "હર્ષલ", mother: "શ્રીમતી કવિતાબેન દિલીપભાઈ ભીમાણી", father: "શ્રી દિલીપભાઈ વિઠ્ઠલદાસભાઈ ભીમાણી", place: "દેવપર - યક્ષ" },
 
   weddingDate: "2026-12-03T07:30:00+05:30",
   calendarUrl:
-    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Manali+%26+Harshal+Wedding&details=You+are+cordially+invited+to+celebrate+the+wedding+of+Harshal+%26+Manali.&location=Taj+Lake+Palace%2C+Lake+Pichola%2C+Udaipur%2C+Rajasthan+313001&dates=20261203T073000%2F20261203T235900&ctz=Asia%2FKolkata",
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Manali+%26+Harshal+લગ્ન&details=હર્ષલ+%26+મનાલીના+લગ્ન+સમારંભમાં+આપને+સાદર+આમંત્રણ+છે.&location=Taj+Lake+Palace%2C+Lake+Pichola%2C+Udaipur%2C+Rajasthan+313001&dates=20261203T073000%2F20261203T235900&ctz=Asia%2FKolkata",
 
   // Music, video and photos: put your files in /public at these paths.
   // (The flower corners and Ganesha ji are already embedded in this file — see EMBEDDED_IMAGES
@@ -21,55 +21,62 @@ const CONFIG = {
 
   story: {
     intro:
-      "Some love stories are written in the stars — ours began with a single glance across a crowded room and has only grown more beautiful with every passing season.",
+      "કેટલીક પ્રેમકથાઓ તારલાઓમાં લખાયેલી હોય છે — અમારી શરૂઆત એક નજરથી થઈ અને દરેક પસાર થતી ઋતુ સાથે વધુ સુંદર બનતી ગઈ.",
     chapters: [
-      ["Chapter One", "The Meeting", "Two families met — and two hearts quietly recognised each other."],
-      ["Chapter Two", "The Knowing", "Slow conversations turned into the certainty of finding the right person."],
-      ["Chapter Three", "The Promise", "With blessings all around, a connection became a forever promise."],
-      ["Chapter Four", "Forever Begins", "Surrounded by love, the most beautiful chapter of our lives begins."],
+      ["પ્રકરણ એક", "મુલાકાત", "બે પરિવારો મળ્યા — અને બે હૃદયોએ શાંતિથી એકબીજાને ઓળખી લીધા."],
+      ["પ્રકરણ બે", "એકબીજાની ઓળખ", "ધીમે ધીમે થયેલી વાતચીત યોગ્ય જીવનસાથી મળ્યાની ખાતરીમાં બદલાઈ ગઈ."],
+      ["પ્રકરણ ત્રણ", "વચન", "સૌના આશીર્વાદ સાથે આ સંબંધ જીવનભરનું વચન બની ગયો."],
+      ["પ્રકરણ ચાર", "હંમેશા માટેની શરૂઆત", "પ્રેમથી ઘેરાયેલા, અમારા જીવનના સૌથી સુંદર અધ્યાયની શરૂઆત થાય છે."],
     ],
   },
 
   gallery: [
-    { src: "/img2.png", alt: "Bride and groom making memories" },
-    { src: "/img3.jpeg", alt: "Bride and groom" },
+    { src: "/img2.png", alt: "વર-વધૂની યાદગાર પળો" },
+    { src: "/img3.jpeg", alt: "વર અને વધૂ" },
   ],
 
   events: [
     {
-      name: "Ganesh Sthapna", icon: "🪔", image: "/GaneshSthapana.png",
-      day: "Wednesday", date: "December 2, 2026",
-      blurb: "Bidding welcome to Lord Ganesha, as the celebrations begin.",
-      whenLabel: "As The Blessings Begin", time: "7:30 AM",
-      whereLabel: "At The Chosen Venue", place: "Home (Shree Ram Krupa)",
+      name: "ગણેશ સ્થાપના", icon: "🪔", image: "/GaneshSthapana.png",
+      day: "બુધવાર", date: "December 2, 2026",
+      blurb: "ઉત્સવની શરૂઆત સાથે શ્રી ગણેશજીનું હાર્દિક સ્વાગત.",
+      whenLabel: "આશીર્વાદની શરૂઆત", time: "7:30 AM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "ઘર (શ્રી રામ કૃપા)",
     },
     {
-      name: "Mandwa Ropan", icon: "🌸", image: "/MandvaRopan.png",
-      day: "Wednesday", date: "December 2, 2026",
-      blurb: "Adorning the sacred mandap for the ceremonies ahead.",
-      whenLabel: "As The Mandap Comes Alive", time: "8:00 AM",
-      whereLabel: "At The Chosen Venue", place: "Home (Shree Ram Krupa)",
+      name: "માંડવારોપણ", icon: "🌸", image: "/MandvaRopan.png",
+      day: "બુધવાર", date: "December 2, 2026",
+      blurb: "આગામી શુભ વિધિઓ માટે પવિત્ર માંડપને શણગારવાની વિધિ.",
+      whenLabel: "માંડપ સજી ઊઠે ત્યારે", time: "8:00 AM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "ઘર (શ્રી રામ કૃપા)",
     },
     {
-      name: "Rudu Mameru", icon: "🧡", image: "/RuduMameru.png",
-      day: "Wednesday", date: "December 2, 2026",
-      blurb: "A cherished tradition of warmth and good wishes from the families.",
-      whenLabel: "As Love Pours In", time: "2:30 PM",
-      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      name: "રૂડું મામેરું", icon: "🧡", image: "/RuduMameru.png",
+      day: "બુધવાર", date: "December 2, 2026",
+      blurb: "પરિવાર તરફથી સ્નેહ અને શુભેચ્છાઓની હૃદયસ્પર્શી પરંપરા.",
+      whenLabel: "જ્યારે પ્રેમ વરસે", time: "2:30 PM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "શ્રી લક્ષ્મી નારાયણ સનાતન સમાજ, દેવપર-યક્ષ",
     },
     {
-      name: "Bhojan Samarambh", icon: "🍽️", image: "/BhojanSamaram.png",
-      day: "Wednesday", date: "December 2, 2026",
-      blurb: "A joyous feast to share love, laughter & delicious food.",
-      whenLabel: "As Tables Are Set", time: "7:30 PM",
-      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Devpar-Yaksh",
+      name: "ભોજન સમારંભ", icon: "🍽️", image: "/BhojanSamaram.png",
+      day: "બુધવાર", date: "December 2, 2026",
+      blurb: "પ્રેમ, હાસ્ય અને સ્વાદિષ્ટ ભોજન સાથે આનંદભર્યો સમારંભ.",
+      whenLabel: "ભોજનની તૈયારી સાથે", time: "7:30 PM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "શ્રી લક્ષ્મી નારાયણ સનાતન સમાજ, દેવપર-યક્ષ",
     },
     {
-      name: "Hast Melap", icon: "💍", image: "/HastMelap.png",
-      day: "Thursday", date: "December 3, 2026",
-      blurb: "The sacred union of two hearts, two souls, two families.",
-      whenLabel: "As The Vows Are Sealed", time: "8:30 AM",
-      whereLabel: "At The Chosen Venue", place: "Shree Laxmi Narayan Sanatan Samaj, Dhavada Mota",
+      name: "દાંડિયારાસ", icon: "💃", image: "/DandiyaRaas.png",
+      day: "બુધવાર", date: "December 2, 2026",
+      blurb: "સંગીત અને નૃત્ય સાથે આનંદભરી સાંજ.",
+      whenLabel: "આનંદભરી સાંજ", time: "8:30 PM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "શ્રી લક્ષ્મી નારાયણ સનાતન સમાજ, દેવપર-યક્ષ",
+    },
+    {
+      name: "હસ્ત મેળાપ", icon: "💍", image: "/HastMelap.png",
+      day: "ગુરુવાર", date: "December 3, 2026",
+      blurb: "બે હૃદય, બે આત્મા અને બે પરિવારોનું પવિત્ર મિલન.",
+      whenLabel: "શુભ વચનો સાથે", time: "8:30 AM",
+      whereLabel: "નક્કી કરેલ સ્થળે", place: "શ્રી લક્ષ્મી નારાયણ સનાતન સમાજ, ઢવાડા મોટા",
     },
   ],
 
@@ -445,7 +452,7 @@ function ScratchHeart({ reveal, onDone }) {
         <path d={HEART} fill="url(#hu)" stroke="#d3a444" strokeWidth=".6" />
       </svg>
       <div className="heart-reveal">
-        <p className="hr-kicker">Save the date</p>
+        <p className="hr-kicker">તારીખ સાચવી રાખો</p>
         <p className="hr-day">{reveal.day}</p>
         <p className="hr-month">{reveal.month}</p>
         <p className="hr-note">{reveal.note}</p>
@@ -456,9 +463,9 @@ function ScratchHeart({ reveal, onDone }) {
         onPointerDown={down} onPointerMove={scratch} onPointerUp={up} onPointerCancel={up}
       />
       <div className={`heart-hint ${touched ? "hide" : ""}`} aria-hidden="true">
-        <span>✧</span><p>Scratch to reveal</p><span>✧</span>
+        <span>✧</span><p>તારીખ જોવા માટે સ્ક્રેચ કરો</p><span>✧</span>
       </div>
-      {!done && <button className="sr-only" onClick={finish}>Reveal the wedding date</button>}
+      {!done && <button className="sr-only" onClick={finish}>લગ્નની તારીખ જુઓ</button>}
     </div>
   );
 }
@@ -481,7 +488,7 @@ export default function WeddingInvitation() {
 
   const revealText = useMemo(() => {
     const d = new Date(CONFIG.weddingDate);
-    const f = (o) => new Intl.DateTimeFormat("en-IN", { timeZone: "Asia/Kolkata", ...o }).format(d);
+    const f = (o) => new Intl.DateTimeFormat("gu-IN", { timeZone: "Asia/Kolkata", ...o }).format(d);
     return {
       day: f({ day: "numeric" }),
       month: `${f({ month: "long" })} ${f({ year: "numeric" })}`,
@@ -559,7 +566,7 @@ export default function WeddingInvitation() {
             <p className="deva cover-deva">श्री गणेशाय नमः</p>
             <h1 className="cover-names">{groom.name} <em>&</em> {bride.name}</h1>
             <Divider mark="bar" />
-            <button className="cover-btn" onClick={openInvitation}>Tap to open</button>
+            <button className="cover-btn" onClick={openInvitation}>આમંત્રણ ખોલવા સ્પર્શ કરો</button>
           </div>
         </div>
       )}
@@ -585,8 +592,8 @@ export default function WeddingInvitation() {
             <div className="person">
               <p className="lbl-deva">वर परिचय</p>
               <h2 className="name">{groom.name}</h2>
-              <p className="role">The Groom</p>
-              <p className="par">S/o. {groom.mother}</p>
+              <p className="role">વર</p>
+              <p className="par">પુત્ર: {groom.mother}</p>
               <p className="par-amp">&</p>
               <p className="par">{groom.father}</p>
               <p className="city">[{groom.place.replace(/[[\]]/g, "")}]</p>
@@ -597,15 +604,15 @@ export default function WeddingInvitation() {
             <div className="person">
               <p className="lbl-deva">वधू परिचय</p>
               <h2 className="name">{bride.name}</h2>
-              <p className="role">The Bride</p>
-              <p className="par">D/o. {bride.mother}</p>
+              <p className="role">વધૂ</p>
+              <p className="par">પુત્રી: {bride.mother}</p>
               <p className="par-amp">&</p>
               <p className="par">{bride.father}</p>
               <p className="city">[{bride.place.replace(/[[\]]/g, "")}]</p>
             </div>
 
             <Divider mark="star" />
-            <p className="wish"><span className="deva">सर्वे भवन्तु सुखिनः</span> — May all be happy.</p>
+            <p className="wish"><span className="deva">सर्वे भवन्तु सुखिनः</span> — સર્વે સુખી રહે.</p>
           </Reveal>
         </section>
 
@@ -613,9 +620,9 @@ export default function WeddingInvitation() {
 
         {/* ---------- Countdown + scratch heart ---------- */}
         <section className="countdown">
-          <h2 className="cd-title">Until Two Souls Become One</h2>
+          <h2 className="cd-title">બે આત્માઓ એક બને ત્યાં સુધી</h2>
           <div className="cd-row" role="timer" aria-live="off">
-            {[["Days", time.days], ["Hours", time.hours], ["Minutes", time.minutes], ["Seconds", time.seconds]].map(([label, value], i) => (
+            {[["દિવસ", time.days], ["કલાક", time.hours], ["મિનિટ", time.minutes], ["સેકન્ડ", time.seconds]].map(([label, value], i) => (
               <div className="cd-wrap" key={label}>
                 {i > 0 && <span className="cd-sep" aria-hidden="true"><b /><b /></span>}
                 <div className="cd">
@@ -627,20 +634,20 @@ export default function WeddingInvitation() {
           </div>
 
           <ScratchHeart reveal={revealText} onDone={() => setRevealed(true)} />
-          <p className="cd-note">{revealed ? "We can't wait to celebrate with you ✨" : "Go on... reveal the date of our special day ✨"}</p>
+          <p className="cd-note">{revealed ? "તમારી સાથે આ આનંદની ઉજવણી કરવા માટે અમે આતુર છીએ ✨" : "આવો... અમારા ખાસ દિવસની તારીખ જુઓ ✨"}</p>
 
           <a className="btn" href={CONFIG.calendarUrl} target="_blank" rel="noreferrer">
-            <CalendarIcon /> Add to Calendar
+            <CalendarIcon /> કેલેન્ડરમાં ઉમેરો
           </a>
         </section>
 
         <LotusDivider />
 
-        {/* ---------- Our Story ---------- */}
+        {/* ---------- અમારી પ્રેમકથા ---------- */}
         <section className="band story">
           <div className="sec-title">
-            <p className="kicker">How It All Began</p>
-            <h2>Our Story</h2>
+            <p className="kicker">આ બધાની શરૂઆત કેવી રીતે થઈ</p>
+            <h2>અમારી પ્રેમકથા</h2>
             <Divider mark="star" />
           </div>
           <Reveal><p className="story-intro">{story.intro}</p></Reveal>
@@ -667,16 +674,16 @@ export default function WeddingInvitation() {
         {/* ---------- Gallery ---------- */}
         <section className="gallery">
           <div className="sec-title">
-            <p className="kicker">Moments Together</p>
-            <h2>The Gallery</h2>
+            <p className="kicker">સાથે વિતાવેલી પળો</p>
+            <h2>ફોટો ગેલેરી</h2>
             <Divider mark="bar" />
           </div>
           <div className="gallery-grid">
             {gallery.map((g, i) => (
               <Reveal key={g.src} delay={i * 120}>
-                <button className="tile" onClick={() => setLightbox(g)} aria-label={`View: ${g.alt}`}>
+                <button className="tile" onClick={() => setLightbox(g)} aria-label={`જુઓ: ${g.alt}`}>
                   <Photo src={g.src} alt={g.alt} />
-                  <span className="tile-view">View</span>
+                  <span className="tile-view">જુઓ</span>
                 </button>
               </Reveal>
             ))}
@@ -688,8 +695,8 @@ export default function WeddingInvitation() {
         {/* ---------- Celebrations ---------- */}
         <section className="band events">
           <div className="sec-title">
-            <p className="kicker">Join Us In Celebration</p>
-            <h2>The Celebrations</h2>
+            <p className="kicker">ઉત્સવમાં અમારી સાથે જોડાઓ</p>
+            <h2>ઉત્સવના પ્રસંગો</h2>
             <Divider mark="bar" />
           </div>
           <div className="timeline">
@@ -722,7 +729,7 @@ export default function WeddingInvitation() {
         
         <hr className="foot-rule" />
         <p className="foot-credit">
-          Crafted with love by<br />
+          પ્રેમથી બનાવેલ<br />
           <a href={footer.studioUrl} target="_blank" rel="noreferrer">{footer.studioName}</a>
         </p>
         <p className="foot-contact">
@@ -732,7 +739,7 @@ export default function WeddingInvitation() {
 
       {lightbox && (
         <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setLightbox(null)}>
-          <button className="lightbox-x" aria-label="Close" onClick={() => setLightbox(null)}>×</button>
+          <button className="lightbox-x" aria-label="બંધ કરો" onClick={() => setLightbox(null)}>×</button>
           <Photo src={lightbox.src} alt={lightbox.alt} className="lightbox-photo" />
         </div>
       )}
@@ -1009,7 +1016,23 @@ const CSS = `
 @media (max-width: 760px) {
   .inv .floral.tl { width: 38vw; }
   .inv .floral.br { width: 36vw; }
-  .inv .hero { padding: 150px 1.25rem 110px; }
+  .inv .ganesha {
+    margin-bottom: 24px;
+    width: 90px;
+  }
+
+  .inv .hero .div {
+    margin-bottom: 16px;
+  }
+
+  .inv .shloka {
+    margin-bottom: 14px;
+  }
+
+  .inv .couple {
+    padding-top: 10px;
+  }
+  .inv .hero { min-height: auto; padding: 100px 1.25rem 30px;}
   .inv .card { padding: 50px 20px 54px; }
   .inv .name { font-size: 2.6rem; }
   .inv .cd-box { width: 70px; height: 84px; }
