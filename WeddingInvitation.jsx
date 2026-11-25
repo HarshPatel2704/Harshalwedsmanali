@@ -9,7 +9,7 @@ const CONFIG = {
 
   weddingDate: "2026-12-03T07:30:00+05:30",
   calendarUrl:
-    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Manali+%26+Harshal+લગ્ન&details=હર્ષલ+%26+મનાલીના+લગ્ન+સમારંભમાં+આપને+સાદર+આમંત્રણ+છે.&location=Taj+Lake+Palace%2C+Lake+Pichola%2C+Udaipur%2C+Rajasthan+313001&dates=20261203T073000%2F20261203T235900&ctz=Asia%2FKolkata",
+    "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Manali+%26+Harshal+લગ્ન&details=હર્ષલ+%26+મનાલીના+લગ્ન+સમારંભમાં+આપને+સાદર+આમંત્રણ+છે.&dates=20261203T073000%2F20261203T235900&ctz=Asia%2FKolkata",
 
   // Music, video and photos: put your files in /public at these paths.
   // (The flower corners and Ganesha ji are already embedded in this file — see EMBEDDED_IMAGES
